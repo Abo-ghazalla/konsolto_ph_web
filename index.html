@@ -45,7 +45,7 @@
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
   <script>
-    var serviceWorkerVersion = '51642470';
+    var serviceWorkerVersion = '88620766';
     var scriptLoaded = false;
     function loadMainDartJs() {
       if (scriptLoaded) {
@@ -60,7 +60,8 @@
 
     if ('serviceWorker' in navigator) {
       window.addEventListener("load", function () {
-    navigator.serviceWorker.register("firebase-messaging-sw.js");
+        var firebaseMessagingUrl = 'firebase-messaging-sw.js?v=' + serviceWorkerVersion;
+    navigator.serviceWorker.register(firebaseMessagingUrl);
   });
       // Service workers are supported. Use them.
       window.addEventListener('load', function () {
